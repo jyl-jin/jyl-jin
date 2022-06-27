@@ -1,0 +1,16 @@
+查看当前镜像地址：
+npm get registry
+
+切换为淘宝镜像：
+npm config set registry http://registry.npm.taobao.org/
+
+切换为原本的npm镜像：
+npm config set registry https://registry.npmjs.org/
+
+
+先安装脚手架：
+npm install -g @vue/cli
+
+
+创建项目：
+vue create 项目名字

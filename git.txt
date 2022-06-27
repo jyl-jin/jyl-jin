@@ -1,0 +1,69 @@
+使用命令
+git config -l    可以看到所有配置信息
+git config --global --list     查看用户名字和email
+ssh-keygen  -t rsa –C “congbo@stu.jluzh.edu.cn”
+
+git config  —— global user.name Coleonecong
+
+git config —— global user.email congbo@stu.jluzh.edu.cn
+git add 文件名 
+###这是把文件添加到缓存区
+
+git commit 文件名 
+##这是把代码提交到本地库
+
+git remote add origin 仓库HTTP地址
+把一个已有的本地仓库与之关联
+
+推送分支：
+      推送分支就是把该分支上所有本地提交到远程库中，推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上：
+      使用命令 $ git push origin master
+<远程主机名> <本地分支名>
+拉取分支:
+拉取分支就是把远程分支拉取到本地上，拉取时，要指定远程分支，这样，Git就会把该远程分支拉取到本地分支中：
+
+$ git pull origin丛博_01:master 
+<远程主机名> <远程分支名>:<本地分支名>
+
+
+1）百度搜索git
+https://git-scm.com/downloads/
+2）安装Git
+傻瓜式安装（一直next）,安装完成可看到Git Bash、Git CMD、Git GUI
+3）git 账号配置
+git config --global usr.name "用户名"  config（全局配置）
+git config --global user.email "用户使用的邮箱"    
+
+
+1 )确认ssh key 是否已存在
+cat ~/.ssh/id_rsa.pub
+2 )如果不存在，使用一下命令生成ssh key
+ssh-kygen -t rsa -C "用户使用的邮箱" 	
+3）按照提示完成三次回车，即可生成 ssh key
+
+4）查看 ~/.ssh/id_rsa.pub 内容，获取并全选复制
+
+
+git fetch是将远程主机的最新内容拉到本地，用户在检查了以后决定是否合并到工作本机分支中。
+
+git pull则是将远程主机的最新内容拉下来后直接合并，即：git pull = git fetch + git merge，这样可能会产生冲突，需要手动解决。
+
+4 )将public SSH key 添加到码云
+右上角设置->安全设置->SSH公钥
+5）进行测试
+ssh -T git@gitee.com
+首次使用需要确认并添加主机到本机SSH可信列表
+
+这里记得要输入yes后再次输入：
+ssh -T git@gitee.com
+
+
+1、（先进入项目文件夹）通过命令 git init 把这个目录变成git可以管理的仓库                       git init
+2、把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件。 git add.
+3、用命令 git commit告诉Git，把文件提交到仓库。引号内为提交说明 
+  git commit -m 'first commit'
+4、关联到远程库        git remote add origin 你的远程库地址（HTTP地址）
+5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）             git pull --rebase origin master
+6、把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。git push -u origin master
+7、状态查询命令         git status
+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
